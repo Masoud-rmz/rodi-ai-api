@@ -1,26 +1,85 @@
 """startup --- port prompts, banner, and local IP detection"""
 
+import os
 import socket
+import struct
 import subprocess
+import sys
 from rodi_admin.config import PORT
+
+SIOCGIFADDR = 0x8915
+
+
+def _add_non_loopback_ip(ips: set[str], ip: str | None) -> None:
+    """Add an IPv4 address to the set when it is not loopback."""
+    if ip and not ip.startswith("127."):
+        ips.add(ip)
+
+
+def _collect_ips_from_hostname_command() -> set[str]:
+    """Collect all assigned IPv4 addresses via `hostname -I` (Linux)."""
+    ips: set[str] = set()
+    try:
+        result = subprocess.run(
+            ["hostname", "-I"],
+            capture_output=True,
+            text=True,
+            timeout=5,
+        )
+        if result.returncode == 0:
+            for ip in result.stdout.split():
+                _add_non_loopback_ip(ips, ip.strip())
+    except (OSError, subprocess.SubprocessError):
+        pass
+    return ips
+
+
+def _collect_ips_from_network_interfaces() -> set[str]:
+    """Collect one IPv4 per interface via ioctl (Linux fallback)."""
+    if sys.platform == "win32":
+        return set()
+
+    import fcntl  # Linux-only --- used for per-interface IPv4 discovery
+
+    ips: set[str] = set()
+    net_class_path = "/sys/class/net"
+    if not os.path.isdir(net_class_path):
+        return ips
+
+    for interface_name in os.listdir(net_class_path):
+        if interface_name == "lo":
+            continue
+        try:
+            request = struct.pack("256s", interface_name[:15].encode("utf-8"))
+            with socket.socket(socket.AF_INET, socket.SOCK_DGRAM) as sock:
+                response = fcntl.ioctl(sock.fileno(), SIOCGIFADDR, request)
+            ip = socket.inet_ntoa(response[20:24])
+            _add_non_loopback_ip(ips, ip)
+        except OSError:
+            continue
+    return ips
 
 
 def get_local_ips() -> list[str]:
-    """Return all non-loopback IPv4 addresses for the current host.
+    """Return all local IPv4 addresses (loopback + every network interface).
 
     Returns:
-        Sorted list of IP address strings (always includes 127.0.0.1).
+        List with 127.0.0.1 first, then other addresses sorted.
     """
-    ips = {"127.0.0.1"}
+    ips = _collect_ips_from_hostname_command()
+    if not ips:
+        ips = _collect_ips_from_network_interfaces()
+
     try:
         hostname = socket.gethostname()
-        for item in socket.getaddrinfo(hostname, None, socket.AF_INET):
-            ip = item[4][0]
-            if not ip.startswith("127."):
-                ips.add(ip)
-    except Exception:
+        _, _, host_ips = socket.gethostbyname_ex(hostname)
+        for ip in host_ips:
+            _add_non_loopback_ip(ips, ip)
+    except OSError:
         pass
-    return sorted(ips)
+
+    lan_ips = sorted(ips)
+    return ["127.0.0.1", *lan_ips]
 
 
 def is_port_in_use(port: int) -> bool:
@@ -94,7 +153,7 @@ def prompt_port_number(default: int = PORT) -> int:
         default: Default port to use when user presses Enter.
 
     Returns:
-        Valid TCP port number (1–65535).
+        Valid TCP port number (1-65535).
     """
     while True:
         raw = input(f"Enter port to open and listen on [{default}]: ").strip()
