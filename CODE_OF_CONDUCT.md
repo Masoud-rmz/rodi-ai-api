@@ -22,7 +22,13 @@ Examples of unacceptable behavior:
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by opening a GitHub issue or contacting the maintainers directly. All complaints will be reviewed and investigated promptly and fairly.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported by:
+
+- Opening a [GitHub Issue](https://github.com/alishafiee1/rodi-ai-api/issues)
+- Email: **alishafiee1@gmail.com**
+- Telegram: **@aliaghashafiee**
+
+All complaints will be reviewed and investigated promptly and fairly.
 
 ## Attribution
 

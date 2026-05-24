@@ -1,22 +1,24 @@
-# rodi_admin
+# RODI AI Server Agent
 
 ![Version](https://img.shields.io/badge/version-1.0.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Python](https://img.shields.io/badge/python-3.10+-yellow)
 ![Platform](https://img.shields.io/badge/platform-Ubuntu%20Linux-orange)
-![Build](https://github.com/rodi-ai/rodi-admin-api/actions/workflows/ci.yml/badge.svg)
+![Build](https://github.com/alishafiee1/rodi-ai-api/actions/workflows/ci.yml/badge.svg)
 
-> A temporary local admin HTTP API for Ubuntu server inspection, command execution, and interactive terminal sessions — designed for AI agent operators and LAN environments.
+> Give AI agents a simple HTTP bridge to your Ubuntu server — run commands, read configs, install packages, and manage interactive sessions without memorizing every Linux command.
+
+**Package:** `rodi_admin` — run with `python3 -m rodi_admin`
 
 ---
 
-## About
+## Why This Exists
 
-`rodi_admin` opens a short-lived HTTP API on your Ubuntu server so that AI coding agents (or human operators) can run shell commands, read files, list directories, and interact with long-running processes — all over plain HTTP with no dependencies beyond Python 3.10+.
+Managing an Ubuntu server means navigating a world of commands — many obscure, many long and fragile. Reading configs, installing packages, hardening security: each step slows you down when you're not a full-time sysadmin.
 
-The service automatically opens the chosen port in UFW on startup and removes the rule on exit.
+I originally built this API for **Perplexity** so it could read server settings, install packages, and run interactive setup scripts over simple HTTP — no SSH memorization required. It worked well enough that I open-sourced it.
 
-**Intended use:** LAN / private networks only. No authentication by default.
+**RODI AI Server Agent** is a temporary, LAN-only HTTP bridge that lets AI coding agents (Perplexity, Cursor, Claude, etc.) operate your Ubuntu server through a clean API instead of raw shell access.
 
 ---
 
@@ -47,8 +49,8 @@ The service automatically opens the chosen port in UFW on startup and removes th
 ## Installation
 
 ```bash
-git clone https://github.com/rodi-ai/rodi-admin-api.git
-cd rodi-admin-api
+git clone https://github.com/alishafiee1/rodi-ai-api.git
+cd rodi-ai-api
 ```
 
 No external dependencies — uses Python stdlib only.
@@ -82,6 +84,18 @@ python3 -m rodi_admin --help-ai    # AI agent usage guide
 | `RODI_ADMIN_PORT` | `8889` | Default port to suggest |
 | `RODI_ADMIN_MAX_READ_BYTES` | `262144` | Max bytes for /read |
 | `RODI_ADMIN_COMMAND_TIMEOUT` | `30` | Command timeout (seconds) |
+
+---
+
+## Screenshots
+
+| | |
+|---|---|
+| ![Terminal UI](docs/images/terminal-ui.png) | Browser terminal at `/terminal` |
+| ![Help endpoint](docs/images/help-endpoint.png) | JSON response from `/help` |
+| ![Startup banner](docs/images/startup-banner.png) | CLI startup output |
+
+> Add your screenshots to [`docs/images/`](docs/images/) — see [docs/images/README.md](docs/images/README.md) for capture instructions.
 
 ---
 
@@ -139,6 +153,14 @@ This tool is designed for **LAN / private environments only**. See [SECURITY.md]
 
 ---
 
+## Support
+
+- GitHub [Issues](https://github.com/alishafiee1/rodi-ai-api/issues) / [Pull Requests](https://github.com/alishafiee1/rodi-ai-api/pulls)
+- Email: alishafiee1@gmail.com
+- Telegram: [@aliaghashafiee](https://t.me/aliaghashafiee)
+
+---
+
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT © 2026 Ali Shafiee — see [LICENSE](LICENSE).

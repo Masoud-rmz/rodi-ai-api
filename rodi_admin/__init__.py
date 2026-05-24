@@ -5,5 +5,5 @@ Designed for use by AI agents and operators in LAN / private environments.
 """
 
 __version__ = "1.0.0"
-__author__ = "rodi-ai"
+__author__ = "Ali Shafiee"
 __license__ = "MIT"

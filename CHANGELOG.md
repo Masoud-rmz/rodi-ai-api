@@ -7,9 +7,10 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ---
 
-## [1.0.0] - 2024-01-01
+## [1.0.0] - 2026-05-24
 
 ### Added
+- Initial public release on GitHub
 - Feature-based modular package `rodi_admin/` replacing single-file `api_admin.py`
 - `python3 -m rodi_admin` entrypoint
 - Centralized `config.py` with environment variable overrides

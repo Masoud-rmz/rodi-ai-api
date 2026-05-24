@@ -10,8 +10,8 @@
 ## Install
 
 ```bash
-git clone https://github.com/rodi-ai/rodi-admin-api.git
-cd rodi-admin-api
+git clone https://github.com/alishafiee1/rodi-ai-api.git
+cd rodi-ai-api
 ```
 
 No pip install required — stdlib only.

@@ -28,7 +28,12 @@ tests/
 docs/
 ├── getting-started.md
 ├── api-reference.md
-└── architecture.md              (this file)
+├── architecture.md              (this file)
+└── images/
+    ├── README.md                screenshot capture guide
+    ├── terminal-ui.png          (add manually)
+    ├── help-endpoint.png        (add manually)
+    └── startup-banner.png       (add manually)
 
 examples/
 ├── basic_usage.sh               curl examples
