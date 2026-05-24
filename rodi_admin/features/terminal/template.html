@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Admin API Terminal</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body { font-family: sans-serif; margin: 20px; background: #111; color: #eee; }
+    input, button, textarea { font: inherit; }
+    textarea {
+      width: 100%;
+      height: 360px;
+      background: #000;
+      color: #0f0;
+      border: 1px solid #444;
+      padding: 12px;
+      resize: vertical;
+    }
+    .row { margin-bottom: 12px; }
+    input[type=text] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #555;
+      background: #1d1d1d;
+      color: #fff;
+    }
+    button {
+      padding: 10px 16px;
+      border: 1px solid #666;
+      background: #222;
+      color: #fff;
+      cursor: pointer;
+      margin-right: 8px;
+    }
+    .muted { color: #aaa; }
+  </style>
+</head>
+<body>
+  <h1>Admin API Terminal</h1>
+  <p class="muted">Start a command, watch server output, and send replies to prompts.</p>
+
+  <div class="row">
+    <label>Command</label>
+    <input id="cmd" type="text" placeholder="bash, python3 script.py, etc.">
+  </div>
+
+  <div class="row">
+    <button onclick="startSession()">Start session</button>
+    <button onclick="stopSession()">Stop session</button>
+  </div>
+
+  <div class="row">
+    <label>Output</label>
+    <textarea id="output" readonly></textarea>
+  </div>
+
+  <div class="row">
+    <label>Input to running session</label>
+    <input id="userInput" type="text" placeholder="Type reply and press Send">
+  </div>
+
+  <div class="row">
+    <button onclick="sendInput()">Send</button>
+  </div>
+
+  <script>
+    let sessionId = null;
+    let pollTimer = null;
+
+    async function startSession() {
+      const cmd = document.getElementById('cmd').value.trim();
+      if (!cmd) return alert('Enter a command');
+      const res = await fetch('/session/start', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({cmd})
+      });
+      const data = await res.json();
+      if (!data.success) return alert(data.error || 'Failed to start session');
+      sessionId = data.session_id;
+      document.getElementById('output').value = '';
+      pollTimer = setInterval(fetchOutput, 1000);
+    }
+
+    async function fetchOutput() {
+      if (!sessionId) return;
+      const res = await fetch('/session/output?session_id=' + encodeURIComponent(sessionId));
+      const data = await res.json();
+      if (data.output !== undefined) {
+        document.getElementById('output').value = data.output;
+        document.getElementById('output').scrollTop = document.getElementById('output').scrollHeight;
+      }
+    }
+
+    async function sendInput() {
+      if (!sessionId) return alert('No active session');
+      const input = document.getElementById('userInput').value;
+      const res = await fetch('/session/send', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({session_id: sessionId, input})
+      });
+      const data = await res.json();
+      if (!data.success) alert(data.message || 'Send failed');
+      document.getElementById('userInput').value = '';
+      fetchOutput();
+    }
+
+    async function stopSession() {
+      if (!sessionId) return;
+      await fetch('/session/stop', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({session_id: sessionId})
+      });
+      clearInterval(pollTimer);
+      pollTimer = null;
+      sessionId = null;
+    }
+  </script>
+</body>
+</html>
