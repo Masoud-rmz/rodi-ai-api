@@ -6,7 +6,6 @@ Tests are disabled by default (RODI_SMOKE_TEST=1 to enable).
 
 import os
 import sys
-import http.server
 import threading
 import urllib.request
 import json
@@ -36,10 +35,9 @@ def test_all_feature_modules_import_without_error():
 @pytest.mark.skipif(not SMOKE_TESTS_ENABLED, reason="Set RODI_SMOKE_TEST=1 to enable")
 def test_help_endpoint_returns_running_status():
     """Start server on a random port, call /help, assert status == 'running'."""
-    from rodi_admin.features.http_server import AdminHandler
+    from rodi_admin.features.http_server import create_admin_server
 
-    # bind on a random free port
-    server = http.server.ThreadingHTTPServer(("127.0.0.1", 0), AdminHandler)
+    server = create_admin_server("127.0.0.1", 0)
     port = server.server_address[1]
 
     server_thread = threading.Thread(target=server.serve_forever, daemon=True)

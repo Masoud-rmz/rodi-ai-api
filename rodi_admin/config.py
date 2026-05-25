@@ -28,3 +28,6 @@ MAX_READ_BYTES: int = _read_int_env("RODI_ADMIN_MAX_READ_BYTES", 256 * 1024)
 
 # Seconds before a /run command is forcibly terminated
 COMMAND_TIMEOUT_SECONDS: int = _read_int_env("RODI_ADMIN_COMMAND_TIMEOUT", 30)
+
+# Seconds to wait for the client to finish sending the HTTP request
+CLIENT_READ_TIMEOUT_SECONDS: int = _read_int_env("RODI_ADMIN_CLIENT_READ_TIMEOUT", 30)

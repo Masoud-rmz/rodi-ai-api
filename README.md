@@ -83,7 +83,8 @@ python3 -m rodi_admin --help-ai    # AI agent usage guide
 |---|---|---|
 | `RODI_ADMIN_PORT` | `8889` | Default port to suggest |
 | `RODI_ADMIN_MAX_READ_BYTES` | `262144` | Max bytes for /read |
-| `RODI_ADMIN_COMMAND_TIMEOUT` | `30` | Command timeout (seconds) |
+| `RODI_ADMIN_COMMAND_TIMEOUT` | `30` | Command timeout (seconds) for `/run` |
+| `RODI_ADMIN_CLIENT_READ_TIMEOUT` | `30` | Max seconds to wait for client HTTP request body |
 
 ---
 
