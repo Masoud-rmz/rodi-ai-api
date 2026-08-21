@@ -1,0 +1,247 @@
+{
+  "api_admin.py": {
+    "mtime": 1781093953.0413427,
+    "ast_hash": "bb6f5e6e8d38e78105446242c8987276",
+    "semantic_hash": ""
+  },
+  "examples/basic_usage.sh": {
+    "mtime": 1781093953.0444422,
+    "ast_hash": "9f607e55a50c8ace02b754279421616c",
+    "semantic_hash": ""
+  },
+  "rodi_admin/__init__.py": {
+    "mtime": 1781093953.048637,
+    "ast_hash": "d501f8352ca1366713a87394af9e98ce",
+    "semantic_hash": ""
+  },
+  "rodi_admin/__main__.py": {
+    "mtime": 1781093953.0491407,
+    "ast_hash": "96e75edd0bba0a3c99d541e7f03d534a",
+    "semantic_hash": ""
+  },
+  "rodi_admin/config.py": {
+    "mtime": 1781093953.050241,
+    "ast_hash": "835a7f7e392b7fcb187501dcb99dad92",
+    "semantic_hash": ""
+  },
+  "rodi_admin/features/__init__.py": {
+    "mtime": 1781093953.0505948,
+    "ast_hash": "33875f393710635d20a26df5714adcb8",
+    "semantic_hash": ""
+  },
+  "rodi_admin/features/command_execution.py": {
+    "mtime": 1781093953.0527945,
+    "ast_hash": "22ae49df4573dbb3410148e4c480db91",
+    "semantic_hash": ""
+  },
+  "rodi_admin/features/file_inspection.py": {
+    "mtime": 1781093953.0533068,
+    "ast_hash": "1e124bff3f588526c3d2dd58e58e5b60",
+    "semantic_hash": ""
+  },
+  "rodi_admin/features/firewall.py": {
+    "mtime": 1781093953.0533068,
+    "ast_hash": "7577df55de90aea90622dd01caceef01",
+    "semantic_hash": ""
+  },
+  "rodi_admin/features/http_server.py": {
+    "mtime": 1781093953.053945,
+    "ast_hash": "54baee35f05fcad8ce5129a257ff2956",
+    "semantic_hash": ""
+  },
+  "rodi_admin/features/interactive_session.py": {
+    "mtime": 1781093953.053945,
+    "ast_hash": "1688e0551968517689bfc075b7888601",
+    "semantic_hash": ""
+  },
+  "rodi_admin/features/startup.py": {
+    "mtime": 1781093953.054449,
+    "ast_hash": "f6663795cf09f8386e3288e2fe7a4a75",
+    "semantic_hash": ""
+  },
+  "rodi_admin/features/terminal/__init__.py": {
+    "mtime": 1781093953.054449,
+    "ast_hash": "702fe8fc0bcd9a4124f8df58e2ae019f",
+    "semantic_hash": ""
+  },
+  "rodi_admin/help_texts.py": {
+    "mtime": 1781093953.055483,
+    "ast_hash": "075d4a208c94b30dfc484e98c1619117",
+    "semantic_hash": ""
+  },
+  "tests/__init__.py": {
+    "mtime": 1781093953.055483,
+    "ast_hash": "d41d8cd98f00b204e9800998ecf8427e",
+    "semantic_hash": ""
+  },
+  "tests/test_http_server.py": {
+    "mtime": 1781093953.0565064,
+    "ast_hash": "f63d93ed465457ce245b4fe6ca47deb9",
+    "semantic_hash": ""
+  },
+  "tests/test_smoke.py": {
+    "mtime": 1781093953.0570211,
+    "ast_hash": "a16a2792fe47199efd8526e9d714b3be",
+    "semantic_hash": ""
+  },
+  ".github/ISSUE_TEMPLATE/bug_report.md": {
+    "mtime": 1781093953.0392702,
+    "ast_hash": "a4f60aef57f022818ee7e63a49188498",
+    "semantic_hash": ""
+  },
+  ".github/ISSUE_TEMPLATE/feature_request.md": {
+    "mtime": 1781093953.0392702,
+    "ast_hash": "8fa363e1ae397d5db493db30aefc5de5",
+    "semantic_hash": ""
+  },
+  ".github/PULL_REQUEST_TEMPLATE.md": {
+    "mtime": 1781093953.0397825,
+    "ast_hash": "d4104282d1343c8f53f0e1c09d4c2154",
+    "semantic_hash": ""
+  },
+  ".github/workflows/ci.yml": {
+    "mtime": 1781093953.0397825,
+    "ast_hash": "bafbeb54fe442145ff0bf01b0a26aef4",
+    "semantic_hash": ""
+  },
+  "CHANGELOG.md": {
+    "mtime": 1781093953.0402927,
+    "ast_hash": "01fac9af11d71f44e0a0300abb8c932d",
+    "semantic_hash": ""
+  },
+  "CODE_OF_CONDUCT.md": {
+    "mtime": 1781093953.0402927,
+    "ast_hash": "ee60799ab7112aae85e5004c42cb31c7",
+    "semantic_hash": ""
+  },
+  "CONTRIBUTING.md": {
+    "mtime": 1781093953.0402927,
+    "ast_hash": "0c184bd859bd050896a8f76f2382fc65",
+    "semantic_hash": ""
+  },
+  "README.md": {
+    "mtime": 1781093953.040805,
+    "ast_hash": "010b7c8fec529a74453ff6aa1030cd4b",
+    "semantic_hash": ""
+  },
+  "SECURITY.md": {
+    "mtime": 1781093953.0413427,
+    "ast_hash": "b07e299750b7f2b49742e94a7ce7082f",
+    "semantic_hash": ""
+  },
+  "docs/api-reference.md": {
+    "mtime": 1781093953.0413427,
+    "ast_hash": "69826b817dacddd74e507468511471c5",
+    "semantic_hash": ""
+  },
+  "docs/architecture.md": {
+    "mtime": 1781093953.042027,
+    "ast_hash": "53a18b8cf6a7e1b2d3db75c5391ddf20",
+    "semantic_hash": ""
+  },
+  "docs/getting-started.md": {
+    "mtime": 1781093953.042027,
+    "ast_hash": "58e8902a78096d1daf39ed08edbf8b37",
+    "semantic_hash": ""
+  },
+  "docs/github-setup.md": {
+    "mtime": 1781093953.042027,
+    "ast_hash": "bf614541ef6ee293aa547410d2fd82c4",
+    "semantic_hash": ""
+  },
+  "examples/ai_agent_usage.md": {
+    "mtime": 1781093953.043929,
+    "ast_hash": "d259ccea83383eb205aadcf8ffc7842d",
+    "semantic_hash": ""
+  },
+  "openspec/changes/opensource-refactor-rodi-admin-api/.openspec.yaml": {
+    "mtime": 1781093953.0449562,
+    "ast_hash": "002c3c5d6a21b16034ca37dd7fbd4391",
+    "semantic_hash": ""
+  },
+  "openspec/changes/opensource-refactor-rodi-admin-api/design.md": {
+    "mtime": 1781093953.0449562,
+    "ast_hash": "ffd83bfdfc2e0282529d2ec3d1e35bc5",
+    "semantic_hash": ""
+  },
+  "openspec/changes/opensource-refactor-rodi-admin-api/proposal.md": {
+    "mtime": 1781093953.0454695,
+    "ast_hash": "1ddbe44274b4c4010809950063398ea0",
+    "semantic_hash": ""
+  },
+  "openspec/changes/opensource-refactor-rodi-admin-api/specs/api-docs/spec.md": {
+    "mtime": 1781093953.0459857,
+    "ast_hash": "adbd45cb6938e16f1dd3d785f4d2236b",
+    "semantic_hash": ""
+  },
+  "openspec/changes/opensource-refactor-rodi-admin-api/specs/command-execution/spec.md": {
+    "mtime": 1781093953.0459857,
+    "ast_hash": "779eb394293fe3270dd29d8226a7cdfa",
+    "semantic_hash": ""
+  },
+  "openspec/changes/opensource-refactor-rodi-admin-api/specs/config-management/spec.md": {
+    "mtime": 1781093953.0464983,
+    "ast_hash": "81baf9484448f0bb4da608f5d833a204",
+    "semantic_hash": ""
+  },
+  "openspec/changes/opensource-refactor-rodi-admin-api/specs/file-inspection/spec.md": {
+    "mtime": 1781093953.0464983,
+    "ast_hash": "d2d864f0d9ddc8710eb3d3762ab72e0e",
+    "semantic_hash": ""
+  },
+  "openspec/changes/opensource-refactor-rodi-admin-api/specs/firewall-management/spec.md": {
+    "mtime": 1781093953.0470102,
+    "ast_hash": "abc61a7b4664a056ec85ea7da18f3017",
+    "semantic_hash": ""
+  },
+  "openspec/changes/opensource-refactor-rodi-admin-api/specs/github-community-files/spec.md": {
+    "mtime": 1781093953.0475218,
+    "ast_hash": "836acd7e10b24db78b58bc01dc464c39",
+    "semantic_hash": ""
+  },
+  "openspec/changes/opensource-refactor-rodi-admin-api/specs/http-server/spec.md": {
+    "mtime": 1781093953.0475218,
+    "ast_hash": "1d558c90604cc69669a096104cf8efd3",
+    "semantic_hash": ""
+  },
+  "openspec/changes/opensource-refactor-rodi-admin-api/specs/interactive-session/spec.md": {
+    "mtime": 1781093953.0480318,
+    "ast_hash": "1da4f8fec212710c1e470050857b8c1f",
+    "semantic_hash": ""
+  },
+  "openspec/changes/opensource-refactor-rodi-admin-api/specs/project-structure/spec.md": {
+    "mtime": 1781093953.0480895,
+    "ast_hash": "ba424eceb5efe96bc7bbc5b995bf99cf",
+    "semantic_hash": ""
+  },
+  "openspec/changes/opensource-refactor-rodi-admin-api/specs/terminal-ui/spec.md": {
+    "mtime": 1781093953.0480895,
+    "ast_hash": "d2e124ae10b789b4cc189e787cf094a4",
+    "semantic_hash": ""
+  },
+  "openspec/changes/opensource-refactor-rodi-admin-api/tasks.md": {
+    "mtime": 1781093953.048637,
+    "ast_hash": "20d19450660c1f18ba873200d59fd25a",
+    "semantic_hash": ""
+  },
+  "rodi_admin/features/terminal/template.html": {
+    "mtime": 1781093953.0549693,
+    "ast_hash": "aa404e6e364080e43067303abbd3ce55",
+    "semantic_hash": ""
+  },
+  "docs/images/help-endpoint.png": {
+    "mtime": 1781093953.0425296,
+    "ast_hash": "58f7cbc69650ff29ac8d10b84a1f2b8b",
+    "semantic_hash": ""
+  },
+  "docs/images/startup-banner.png": {
+    "mtime": 1781093953.0434263,
+    "ast_hash": "a2a6651e506478cf15b2f2f2fd5836c3",
+    "semantic_hash": ""
+  },
+  "docs/images/terminal-ui.png": {
+    "mtime": 1781093953.043929,
+    "ast_hash": "2a21421f693c2f4486c229e8cc45cc07",
+    "semantic_hash": ""
+  }
+}
